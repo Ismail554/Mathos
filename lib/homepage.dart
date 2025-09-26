@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mathos/login.dart';
@@ -32,43 +33,43 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-                SizedBox(height: 50),
+                SizedBox(height: 50.h),
                 Container(
                   color: Color(0xFFFFFFFF),
                   width: double.infinity,
-                  height: 54,
+                  height: 54.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(width: 12),
+                      SizedBox(width: 12.w),
                       Image.asset('assets/images/logo.jpg'),
 
                       Spacer(),
 
                       SvgPicture.asset(
                         'assets/icon/ai_msg.svg',
-                        height: 24,
-                        width: 96,
+                        height: 24.h,
+                        width: 24.w,
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       SvgPicture.asset(
                         'assets/icon/search.svg',
-                        height: 24,
-                        width: 96,
+                        height: 24.h,
+                        width: 24.w,
                       ),
-                      SizedBox(width: 10),
+                      SizedBox(width: 10.w),
                       SvgPicture.asset(
                         'assets/icon/bell.svg',
-                        height: 24,
-                        width: 96,
+                        height: 24.h,
+                        width: 24.w,
                       ),
-                      SizedBox(width: 12),
+                      SizedBox(width: 12.w),
                     ],
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Padding(
-                  padding: EdgeInsets.only(right: 180.0),
+                  padding: EdgeInsets.only(right: 180.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Math Feed',
                         style: GoogleFonts.inter(
-                          fontSize: 20,
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                         ),
                         textAlign: TextAlign.left,
@@ -84,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'Help others and earn points!',
                         style: GoogleFonts.inter(
-                          fontSize: 12,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
                         ),
                         textAlign: TextAlign.left,
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 //data container
                 ///card 01
@@ -106,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                   profileImage: 'assets/images/123.jpeg',
                   docImage: 'assets/images/image1.png',
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 /// card 02
                 CustomContainer(
@@ -117,7 +118,7 @@ class _HomePageState extends State<HomePage> {
                       'I need help with trigonometry! How do I remember the relationships between sin, cos, and tan? Any easy tricks?',
                   profileImage: 'assets/images/hello.png',
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomContainer(
                   name: 'Rakib Hassan',
                   grade: 'Grade 4',
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                       'I need help with trigonometry! How do I remember the relationships between sin, cos, and tan? Any easy tricks?',
                   profileImage: 'assets/images/hello.png',
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 CustomContainer(
                   name: 'Rakib Hassan',
                   grade: 'Grade 4',

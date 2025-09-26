@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,13 +31,13 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(
-        minHeight: 201, // Set the minimum height of the container
-        maxHeight: 401, // Set the maximum height of the container
+        minHeight: 201.h, // Set the minimum height of the container
+        maxHeight: 401.h, // Set the maximum height of the container
       ),
-      width: 335,
+      width: 335.w,
       decoration: BoxDecoration(
         color: Color(0xFFFFFFFF),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16.r),
         boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2))],
       ),
       child: Column(
@@ -44,22 +45,22 @@ class CustomContainer extends StatelessWidget {
         mainAxisSize: MainAxisSize.min, // Column will adjust based on content
         children: [
           Padding(
-            padding: EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(12.w),
             child: Row(
               children: [
                 CircleAvatar(
-                  radius: 24,
+                  radius: 24.r,
                   backgroundImage: AssetImage(profileImage),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.w),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         name,
                         style: GoogleFonts.inter(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
                         ),
                         textAlign: TextAlign.left,
@@ -69,18 +70,18 @@ class CustomContainer extends StatelessWidget {
                           Text(
                             grade,
                             style: GoogleFonts.inter(
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.left,
                           ),
-                          SizedBox(width: 5),
-                          Icon(Icons.circle, size: 5),
-                          SizedBox(width: 5),
+                          SizedBox(width: 5.w),
+                          Icon(Icons.circle, size: 5.r),
+                          SizedBox(width: 5.w),
                           Text(
                             time,
                             style: GoogleFonts.inter(
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                             ),
                             textAlign: TextAlign.left,
@@ -91,20 +92,20 @@ class CustomContainer extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 90.0, bottom: 20),
+                  padding: EdgeInsets.only(left: 90.w, bottom: 20.h),
                   child: SvgPicture.asset('assets/icon/menu.svg'),
                 ),
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 18.0),
+            padding: EdgeInsets.only(left: 18.w),
             child: SizedBox(
-              width: 266,
+              width: 266.w,
               child: Text(
                 details,
                 style: GoogleFonts.inter(
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.left,
@@ -117,32 +118,32 @@ class CustomContainer extends StatelessWidget {
           // Only display the docImage if it's not null
           if (docImage != null)
             Padding(
-              padding: EdgeInsets.all(18.0),
+              padding: EdgeInsets.all(18.w),
               child: Image.asset(docImage!),
             ),
           Padding(
-            padding: EdgeInsets.only(left: 18.0, right: 18.0),
+            padding: EdgeInsets.only(left: 18.w, right: 18.w),
             child: SvgPicture.asset('assets/icon/line.svg'),
           ),
           // Wrap the last row with Expanded to avoid overflow
           Padding(
-            padding: EdgeInsets.only(left: 18.0, right: 18.0, top: 15),
+            padding: EdgeInsets.only(left: 18.w, right: 18.w, top: 15.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               // Space out the elements evenly
               children: [
                 Container(
-                  height: 28,
+                  height: 28.h,
                   decoration: BoxDecoration(
                     color: Color(0xFFEFF6FF),
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(30.r),
                   ),
-                  width: 148,
+                  width: 148.w,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SvgPicture.asset('assets/icon/like.svg'),
-                      SizedBox(width: 5),
+                      SizedBox(width: 5.w),
                       Text(
                         'Upvote',
                         style: GoogleFonts.inter(
@@ -151,9 +152,9 @@ class CustomContainer extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 5.w),
                       Icon(Icons.circle, size: 5),
-                      SizedBox(width: 5),
+                      SizedBox(width: 5.w),
                       // Ensure like and unlike are non-null, if not use fallback text
                       Text(
                         like ?? '0', // Fallback to '0' if like is null
@@ -163,12 +164,12 @@ class CustomContainer extends StatelessWidget {
                         ),
                         textAlign: TextAlign.left,
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 5.w),
                       SvgPicture.asset('assets/icon/dislike.svg'),
                     ],
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 SvgPicture.asset('assets/icon/comment.svg'),
 
                 // Ensure comment is non-null, if not use fallback text
@@ -180,12 +181,12 @@ class CustomContainer extends StatelessWidget {
                   ),
                   textAlign: TextAlign.left,
                 ),
-                SizedBox(width: 80),
+                SizedBox(width: 80.w),
                 SvgPicture.asset('assets/icon/share.svg'),
               ],
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: 10.h),
         ],
       ),
     );
