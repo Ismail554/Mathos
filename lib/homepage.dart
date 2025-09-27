@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mathos/login.dart';
-
-import 'Custome_container.dart';
+import 'package:mathos/Ostad/field.dart';
+import 'package:mathos/login.dart'; // Assuming this is the correct file for LoginPage
+import 'Custome_container.dart'; // Ensure this file is imported
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,6 +14,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Function to navigate to another screen
+  void navigateToField() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FlutterInput()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,14 +32,14 @@ class _HomePageState extends State<HomePage> {
             MaterialPageRoute(builder: (context) => LoginPage()),
           );
         },
-       
-        child: const Icon(Icons.add), // Example child
+        child: const Icon(Icons.add),
       ),
       backgroundColor: Color(0xFFF3F4F6),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Column(
+      body: Stack(
+        children: [
+          // Main body content
+          SingleChildScrollView(
+            child: Column(
               children: [
                 SizedBox(height: 50.h),
                 Container(
@@ -43,9 +51,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       SizedBox(width: 12.w),
                       Image.asset('assets/images/logo.jpg'),
-
                       Spacer(),
-
                       SvgPicture.asset(
                         'assets/icon/ai_msg.svg',
                         height: 24.h,
@@ -73,7 +79,6 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      //title text
                       Text(
                         'Math Feed',
                         style: GoogleFonts.inter(
@@ -94,10 +99,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 20.h),
-
-                //data container
-                ///card 01
-                ///
+                // Data container cards
                 CustomContainer(
                   name: 'Sarah Ahmed',
                   grade: 'Grade 10',
@@ -108,8 +110,6 @@ class _HomePageState extends State<HomePage> {
                   docImage: 'assets/images/image1.png',
                 ),
                 SizedBox(height: 20.h),
-
-                /// card 02
                 CustomContainer(
                   name: 'Rakib Hassan',
                   grade: 'Grade 4',
@@ -136,10 +136,27 @@ class _HomePageState extends State<HomePage> {
                       'I need help with trigonometry! How do I remember the relationships between sin, cos, and tan? Any easy tricks?',
                   profileImage: 'assets/images/hello.png',
                 ),
+                SizedBox(height: 20.h),
               ],
             ),
-          ],
-        ),
+          ),
+
+          // Corrected ElevatedButton with Positioned widget
+          Positioned(
+            bottom: 36.h, // Adjust bottom position
+            left: 16.w,
+            right: 16.w,
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(
+                  Colors.blue,
+                ), // Correct way to set background color
+              ),
+              onPressed: navigateToField,
+              child: Text('Go to Field'),
+            ),
+          ),
+        ],
       ),
     );
   }

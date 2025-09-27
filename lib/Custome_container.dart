@@ -47,6 +47,7 @@ class CustomContainer extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(12.w),
             child: Row(
+              //profile bar row
               children: [
                 CircleAvatar(
                   radius: 24.r,

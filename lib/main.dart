@@ -4,6 +4,8 @@ import 'package:mathos/asif_taj/top_widget.dart';
 import 'package:mathos/homepage.dart';
 import 'package:mathos/login.dart';
 
+import 'Ostad/field.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           ),
-          home: const tutorial(),
+          home: const HomePage(),
         );
       },
     );
